@@ -1,0 +1,21 @@
+<app-header-public
+  (darkModeSwitched)="switchMode($event)"
+  [isDarkMode]="isDarkMode"
+></app-header-public>
+<main class="content">
+  <h1 *ngIf="nftVerify == true">Component heading</h1>
+  <mat-card *ngIf="nftVerify == true">
+    <mat-card-header>
+      <mat-card-title>User Card</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="card-content">
+      <mat-form-field>
+        <mat-label>Select access</mat-label>
+        <mat-select>
+          <mat-option [value]="0">Admin</mat-option>
+          <mat-option [value]="1">Collaborator</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+</main>

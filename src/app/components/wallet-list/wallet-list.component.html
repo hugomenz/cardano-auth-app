@@ -1,0 +1,38 @@
+<div class="card">
+  <h1 mat-dialog-title>Wallet List</h1>
+  <div mat-dialog-content>
+    <div class="row" *ngFor="let wallet of supportedWalletList">
+      <button
+        class="select-wallet"
+        mat-raised-button
+        (click)="onEnable(wallet)"
+        [disabled]="!this.walletImgCollection[wallet].installed"
+      >
+        <div class="wallet-info">
+          <img src="{{ this.walletImgCollection[wallet].src }}" alt="" />
+          <span
+            >{{
+              capitalizeFirstLetter(
+                this.walletImgCollection[wallet].name
+              ).split("wallet")[0]
+            }}
+            Wallet</span
+          >
+        </div>
+      </button>
+
+      <a
+        mat-flat-button
+        class="install"
+        color="accent"
+        *ngIf="!this.walletImgCollection[wallet].installed"
+        href="{{ this.walletImgCollection[wallet].url }}"
+        target="_blank"
+        >Install</a
+      >
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+  </div>
+</div>
