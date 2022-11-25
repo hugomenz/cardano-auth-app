@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+  <div class="tools">
+    <span class="element">
+      <mat-slide-toggle
+        [checked]="isDarkMode"
+        (change)="onDarkModeSwitched($event)"
+        ><mat-icon>brightness_6</mat-icon></mat-slide-toggle
+      >
+    </span>
+    <span>
+      <button mat-raised-button color="accent">Connect Wallet</button>
+    </span>
+  </div>
+</mat-toolbar>

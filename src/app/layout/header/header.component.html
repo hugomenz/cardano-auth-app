@@ -1,0 +1,12 @@
+<nav class="navbar">
+  <app-header-public
+    class="menu-container"
+    (darkModeSwitched)="switchMode($event)"
+    [isDarkMode]="isDarkMode"
+  ></app-header-public>
+  <app-header-private
+    class="menu-container"
+    (darkModeSwitched)="switchMode($event)"
+    [isDarkMode]="isDarkMode"
+  ></app-header-private>
+</nav>
